@@ -45,4 +45,4 @@ typechain-types
 #Hardhat files
 cache
 artifacts
-hardhat.config
+secrets.json

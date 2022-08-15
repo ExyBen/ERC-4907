@@ -1,6 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
-
+const { privateKey,APIKey } = require('./secrets.json');
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -40,7 +40,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     networks: {
       goerli: {
           url: "https://goerli.infura.io/v3/8635e21fd68a478c945c55075edb204d",
-          accounts: ['0x3f98cedfd32daf3ff3e443883e981d43a9fc5df7897418bc728dc99b7d492ddc'],
+          accounts: [privateKey],
           gas: 12100000,
           gasPrice: 18000000000
       }
@@ -48,6 +48,6 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     etherscan: {
       // Your API key for Etherscan
       // Obtain one at https://etherscan.io/
-      apiKey: "6URR8WSYU87E1Q3XR3Z74MANGSHP1K3QTJ"
+      apiKey: APIKey
     }
  };
